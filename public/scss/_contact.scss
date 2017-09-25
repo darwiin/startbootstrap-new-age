@@ -44,6 +44,14 @@ section.contact {
                     }
                 }
             }
+            &.social-youtube {
+                a {
+                    background-color: $brand-youtube;
+                    &:hover {
+                        background-color: darken($brand-youtube, 5%);
+                    }
+                }
+            }
         }
     }
 }
