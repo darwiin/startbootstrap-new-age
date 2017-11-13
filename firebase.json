@@ -5,11 +5,30 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "**/scss/**"
+      "**/css/new-age.css",
+      "**/scss/**",
+      "**/less/**",
+      "**/device-mockups/device-mockups.css",
+      "**/device-mockups/device-mockups2.css",
+      "**/vendor/font-awesome/css/font-awesome.css",
+      "**/vendor/bootstrap/css/bootstrap-grid.css",
+      "**/vendor/bootstrap/css/bootstrap-reboot.css",
+      "**/vendor/bootstrap/css/bootstrap.css",
+      "**/vendor/bootstrap/js/bootstrap.js",
+      "**/vendor/jquery/jquery.js",
+      "**/vendor/popper/popper.js",
+      "**/gulpfile.js",
+      "**/package-lock.json",
+      "**/package.json",
+      "**/LICENSE",
+      "**/README.md"
     ],
     // Add the "rewrites" section within "hosting"
     "rewrites": [ {
-      "source": "**",
+      "source": "**/CGU/**",
+      "destination": "/CGU/index.html"
+    },{
+      "source": "**/**",
       "destination": "/index.html"
     } ]
   }

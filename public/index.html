@@ -93,8 +93,8 @@
             <h2 class="section-heading" data-translate="_download_title">Discover what all the buzz is about!</h2>
             <p data-translate="_download_description">Our app is available on any mobile device! Download now to get started!</p>
             <div class="badges">
-              <a class="badge-link" href="#"><img data-img="_google_play" src="img/googleplay-fr.svg" alt=""></a>
-              <a class="badge-link" href="#"><img data-img="_apple_store" src="img/App_Store_Badge_FR_135x40.svg" alt=""></a>
+              <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.epi.SimplyCity"><img data-img="_google_play" src="img/googleplay-fr.svg" alt=""></a>
+              <a class="badge-link" href="https://itunes.apple.com/fr/app/simply-city/id1245375216?mt=8"><img data-img="_apple_store" src="img/App_Store_Badge_FR_135x40.svg" alt=""></a>
             </div>
           </div>
         </div>
@@ -104,8 +104,8 @@
     <section class="features" id="features">
       <div class="container">
         <div class="section-heading text-center">
-          <h2>Unlimited Features, Unlimited Fun</h2>
-          <p class="text-muted">Check out what you can do with this app theme!</p>
+          <h2 data-translate="_features_heading">Unlimited Features, Unlimited Fun</h2>
+          <p class="text-muted" data-translate="_features_sub_heading">Check out what you can do with this app theme!</p>
           <hr>
         </div>
         <div class="row">
@@ -167,7 +167,7 @@
     <section class="cta">
       <div class="cta-content">
         <div class="container">
-          <h2>Stop waiting.<br>Start building.</h2>
+          <h2 ><span data-translate="_dont_wait">Stop waiting.</span><br><span data-translate="_start_using">Start building.</span></h2>
           <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger" data-translate="_joinus">Rejoignez-nous !</a>
         </div>
       </div>
@@ -231,55 +231,6 @@
       // Some variables for later
       var dictionary, set_lang;
 
-      dictionary = {
-        "en": {
-            "_download": "Download",
-            "_trynow": "Start now for Free",
-            "_features": "Features",
-            "_contact": "Contact",
-            "_language": "fr",
-            "_punchline": "With Simply City make your city easier !",
-            "_download_title": "Discover what all the buzz is about!",
-            "_download_description": "Our app is available on any mobile device! Download now to get started!",
-            "_event_title": "Events",
-            "_event_description":"What to do this weekend? Keep in touch with events around you!",
-            "_direction_title":"Places",
-            "_direction_description":"Where should I go with my children? Where can I have a drink this evening?",
-            "_free_title":"Free to Use",
-            "_free_description":"You can have all these features for free.",
-            "_incident_title":"Be involved",
-            "_incident_description":"Tell your city services about the incidents you see",
-            "_joinus":"Join us!",
-            "_love_friends_1":"We ",
-            "_love_friends_2":" new friends!",
-            "_google_play":"img/google-play-badge.svg",
-            "_apple_store":"img/app-store-badge.svg"
-        },
-        "fr": {
-            "_download": "Téléchargement",
-            "_trynow": "Essayez maintenant!",
-            "_features": "Fonctionalités",
-            "_contact": "Contact",
-            "_language": "en",
-            "_punchline": "Avec Simply City simplifiez vous la ville !",
-            "_download_title": "Venez découvrir ce dont tout le monde parle!",
-            "_download_description": "Notre application est disponible sur tous les smartphones! Téléchargez-la pour essayer!",
-            "_event_title": "Tous les évènements",
-            "_event_description":"Que faire ce week-end? Restez informés de ce qui se passe autour de vous!",
-            "_direction_title":"Tous les lieux",
-            "_direction_description":"Où emmener les enfants ce week-end? Où boire un verre ce soir?",
-            "_free_title":"Gratuite",
-            "_free_description":"Toutes les fonctionnalités sont accessibles gratuitement.",
-            "_incident_title":"Soyez impliqués",
-            "_incident_description":"Signalez aux services de votre ville les incidents dont vous êtes témoins",
-            "_joinus":"Rejoignez nous!",
-            "_love_friends_1":"Nous ",
-            "_love_friends_2":" nous faire de nouveaux amis!",
-            "_google_play":"img/google-play-badge-fr.svg",
-            "_apple_store":"img/app-store-badge-fr.svg"
-        }
-      };
-
       $(function () {
         // Lets be professional, shall we?
         "use strict";
@@ -308,8 +259,13 @@
             }
         });
   
+        $.getJSON( "https://simply-city-website.firebaseio.com/dictionary.json", function( data ) {
+          dictionary = data;
+          set_lang(dictionary.fr);
+        });
+
         // Set initial language to English
-        set_lang(dictionary.fr);
+        
       });
     </script>
 
