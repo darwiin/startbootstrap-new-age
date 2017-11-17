@@ -35,4 +35,92 @@
     }
   });
 
+  var dictionary, set_lang;
+  
+  // Function for swapping dictionaries
+  set_lang = function (dictionary) {
+    
+    $("[data-translate]").text(function () {
+      var key = $(this).data("translate");
+      if (dictionary.hasOwnProperty(key)) {
+        return dictionary[key];
+      }
+    });
+
+    $("[data-img]").attr("src", function() {
+      var key = $(this).data("img");
+      if (dictionary.hasOwnProperty(key)) {
+        return dictionary[key];
+      }
+    });
+
+    $("[data-placeholder]").attr("placeholder", function() {
+      var key = $(this).data("placeholder");
+      if (dictionary.hasOwnProperty(key)) {
+        return dictionary[key];
+      }
+    });
+  };
+    
+  // Swap languages when menu changes
+  $(".language-toggle").on("click", function () {
+    var language = $(this).text().toLowerCase();
+    if (dictionary.hasOwnProperty(language)) {
+      set_lang(dictionary[language]);
+    }
+  });
+    
+  // Set initial language to French
+  $.getJSON( "https://simply-city-website.firebaseio.com/dictionary.json", function( data ) {
+    dictionary = data;
+    set_lang(dictionary.fr);
+  });
+          
+  $( "#contact-form" ).submit(function( event ) {
+    event.preventDefault();
+    send_email();
+  });
+
+
 })(jQuery); // End of use strict
+
+function send_email(token) {
+  var formElement = document.getElementById("contact-form");
+  var formData = new FormData(formElement),
+    convertedJSON = {},
+    it = formData.entries(),
+    n;
+
+  while (n = it.next()) {
+    if (!n || n.done) break;
+    convertedJSON[n.value[0]] = n.value[1];
+  }
+  console.log(convertedJSON);
+
+  $.ajax({
+    url: '/email',
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(convertedJSON),
+    dataType: 'json',
+    success: function (data)
+    {
+        // data = JSON object that contact.php returns
+
+        // we recieve the type of the message: success x danger and apply it to the 
+        var messageAlert = 'alert-' + data.type;
+        var messageText = data.message;
+
+        // let's compose Bootstrap alert box HTML
+        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+        
+        // If we have messageAlert and messageText
+        if (messageAlert && messageText) {
+            // inject the alert to .messages div in our form
+            $('#contact-form').find('.messages').html(alertBox);
+            // empty the form
+            $('#contact-form')[0].reset();
+        }
+    }
+  });
+};

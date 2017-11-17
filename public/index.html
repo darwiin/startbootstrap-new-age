@@ -25,7 +25,6 @@
 
     <!-- Custom styles for this template -->
     <link href="css/new-age.min.css" rel="stylesheet">
-
   </head>
 
   <body id="page-top">
@@ -69,7 +68,7 @@
           </div>
           <div class="col-lg-5 my-auto">
             <div class="device-container">
-              <div class="device-mockup galaxy_s5 portrait white">
+              <div class="device-mockup iphone6_plus portrait black">
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
@@ -115,7 +114,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="img/splashscreen.png" class="img-fluid" alt="">
+                    <img src="img/map.png" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -174,6 +173,80 @@
       <div class="overlay"></div>
     </section>
 
+    <section>
+      <div class="container">
+        <form id="contact-form" method="post" action="?" role="form">
+    
+          <div class="messages"></div>
+    
+          <div class="controls">
+    
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="form_name" data-translate="_form_label_firstname">Firstname *</label>
+                  <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required"
+                    data-error="Firstname is required." data-placeholder="_form_placeholder_firstname">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="form_lastname" data-translate="_form_label_lastname">Lastname *</label>
+                  <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required"
+                    data-error="Lastname is required." data-placeholder="_form_placeholder_lastname">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="form_email" data-translate="_form_label_email">Email *</label>
+                  <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required"
+                    data-error="Valid email is required." data-placeholder="_form_placeholder_email">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="form_phone" data-translate="_form_label_phone">Phone</label>
+                  <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone" data-placeholder="_form_placeholder_phone">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="form_message" data-translate="_form_label_message">Message *</label>
+                  <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required"
+                    data-error="Please,leave us a message." data-placeholder="_form_placeholder_message"></textarea>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                  <button
+                  class="g-recaptcha btn btn-primary btn-send"
+                  data-sitekey="6Lc_njgUAAAAAGldV3rLB4CKzPDAbm3cZlgIE1zC"
+                  data-callback="send_email" data-translate="_form_label_button">
+                  Send message
+                  </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text-muted">
+                  <strong>*</strong> <span data-translate="_form_label_mandatory">These fields are required. </span>
+                </p>
+              </div>
+            </div>
+          </div>
+    
+        </form>
+      </div>
+    </section>
+
     <section class="contact bg-primary" id="contact">
       <div class="container">
         <h2><span data-translate="_love_friends_1">Nous</span>
@@ -226,49 +299,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
-
-    <script>
-      // Some variables for later
-      var dictionary, set_lang;
-
-      $(function () {
-        // Lets be professional, shall we?
-        "use strict";
-
-        // Function for swapping dictionaries
-        set_lang = function (dictionary) {
-            $("[data-translate]").text(function () {
-                var key = $(this).data("translate");
-                if (dictionary.hasOwnProperty(key)) {
-                    return dictionary[key];
-                }
-            });
-            $("[data-img]").attr("src", function() {
-              var key = $(this).data("img");
-                if (dictionary.hasOwnProperty(key)) {
-                    return dictionary[key];
-                }
-            });
-        };
-  
-        // Swap languages when menu changes
-        $(".language-toggle").on("click", function () {
-            var language = $(this).text().toLowerCase();
-            if (dictionary.hasOwnProperty(language)) {
-                set_lang(dictionary[language]);
-            }
-        });
-  
-        $.getJSON( "https://simply-city-website.firebaseio.com/dictionary.json", function( data ) {
-          dictionary = data;
-          set_lang(dictionary.fr);
-        });
-
-        // Set initial language to English
-        
-      });
-    </script>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
   </body>
 
 </html>
