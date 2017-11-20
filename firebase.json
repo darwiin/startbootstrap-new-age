@@ -21,15 +21,28 @@
       "**/package-lock.json",
       "**/package.json",
       "**/LICENSE",
-      "**/README.md"
+      "**/README.md",
+      "functions/",
+      "img/bg-cta.jpg",
+      "img/demo-screen1.jpg"
     ],
-    // Add the "rewrites" section within "hosting"
-    "rewrites": [ {
-      "source": "**/CGU/**",
-      "destination": "/CGU/index.html"
-    },{
-      "source": "**/**",
-      "destination": "/index.html"
-    } ]
+    "rewrites": [
+      {
+        "source": "/email",
+        "function": "email"
+      },
+      {
+        "source": "**/CGU/**",
+        "destination": "/CGU/index.html"
+      },
+      {
+        "source": "**/cgu/**",
+        "destination": "/CGU/index.html"
+      },
+      {
+        "source": "**/**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }
