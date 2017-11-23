@@ -10,6 +10,7 @@
       "**/less/**",
       "**/device-mockups/device-mockups.css",
       "**/device-mockups/device-mockups2.css",
+      "**/device-mockups/device-mockups2.min.css",
       "**/vendor/font-awesome/css/font-awesome.css",
       "**/vendor/bootstrap/css/bootstrap-grid.css",
       "**/vendor/bootstrap/css/bootstrap-reboot.css",
@@ -43,6 +44,19 @@
         "source": "**/**",
         "destination": "/index.html"
       }
-    ]
+    ],
+    "headers": [ {
+      "source" : "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+      "headers" : [ {
+        "key" : "Access-Control-Allow-Origin",
+        "value" : "*"
+      } ]
+    }, {
+      "source" : "**/*.@(jpg|jpeg|gif|png|svg)",
+      "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=7200"
+      } ]
+    } ]
   }
 }

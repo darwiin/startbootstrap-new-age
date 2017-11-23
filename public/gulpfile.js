@@ -6,6 +6,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
+var concat = require('gulp-concat-css')
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -95,8 +96,27 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
+gulp.task('concat-css', function() {
+  return gulp.src([
+    'vendor/bootstrap/css/*.min.css',
+    'css/new-age.min.css'
+  ])
+  .pipe(concat("simply-city.css"))
+  .pipe(gulp.dest('css/'))
+  .pipe(cleanCSS({
+    compatibility: 'ie8'
+  }))
+  .pipe(rename({
+    suffix: '.min'
+  }))
+  .pipe(gulp.dest('css'))
+  .pipe(browserSync.reload({
+    stream: true
+  }))
+})
+
 // Default task
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy', 'concat-css']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -108,7 +128,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js', 'concat-css'], function() {
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
