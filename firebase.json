@@ -6,6 +6,8 @@
       "**/.*",
       "**/node_modules/**",
       "**/css/new-age.css",
+      "**/css/new-age.min.css",
+      "**/css/simply-city.css",
       "**/scss/**",
       "**/less/**",
       "**/device-mockups/device-mockups.css",
@@ -24,8 +26,11 @@
       "**/LICENSE",
       "**/README.md",
       "functions/",
-      "img/bg-cta.jpg",
-      "img/demo-screen1.jpg"
+      "**/img/bg-cta.jpg",
+      "**/img/demo-screen1.jpg",
+      "**/img/splashscreen.png",
+      "**/img/home.jpg",
+      "**/img/map.png"
     ],
     "rewrites": [
       {

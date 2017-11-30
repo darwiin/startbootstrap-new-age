@@ -133,12 +133,18 @@ header.masthead {
     margin-left: auto; }
     header.masthead .device-container .screen img {
       border-radius: 3px; }
+  header.masthead .flex-column {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column; }
   @media (min-width: 992px) {
     header.masthead {
       height: 100vh;
-      min-height: 775px;
-      padding-top: 0;
-      padding-bottom: 0; }
+      min-height: 775px; }
       header.masthead .header-content {
         margin-bottom: 0;
         text-align: left; }
@@ -162,7 +168,7 @@ section.download {
       height: 60px; }
     @media (min-width: 768px) {
       section.download .badges .badge-link {
-        display: inline-block;
+        display: inline;
         margin-bottom: 0; } }
   @media (min-width: 768px) {
     section.download h2 {

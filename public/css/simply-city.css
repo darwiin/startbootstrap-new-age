@@ -9217,12 +9217,20 @@ header.masthead .device-container .screen img {
   border-radius: 3px;
 }
 
+header.masthead .flex-column {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  flex-direction: column;
+}
+
 @media (min-width:992px) {
   header.masthead {
     height: 100vh;
     min-height: 775px;
-    padding-top: 0;
-    padding-bottom: 0;
   }
 
   header.masthead .header-content {
@@ -9264,7 +9272,7 @@ section.download .badges .badge-link img {
 
 @media (min-width:768px) {
   section.download .badges .badge-link {
-    display: inline-block;
+    display: inline;
     margin-bottom: 0;
   }
 }

@@ -49,7 +49,7 @@ exports.email = functions.https.onRequest((req, res) => {
 
         const mailOptions = {
           from: `${form.name} ${form.surname} <${form.email}>`,
-          to: "christophe.roger.epi@engie.com",
+          to: "simplycity.epi@engie.com",
           subject: "Message from Simply City website",
           text: content
         };
