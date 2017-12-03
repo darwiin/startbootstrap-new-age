@@ -43,7 +43,7 @@
     $("[data-translate]").text(function () {
       var key = $(this).data("translate");
       if (dictionary.hasOwnProperty(key)) {
-        return dictionary[key];
+        return dictionary[key].replace(/_/g,String.fromCharCode(160));
       }
     });
 
