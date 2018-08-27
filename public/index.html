@@ -5,10 +5,10 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Application mobile sur Android et iOS qui vous simplifie la ville">
+    <meta name="description" content="Avec Simply City Nouméa, retrouvez facilement les évènements, restaurants, hôtels, commerces, plans et plein d’autres infos utiles. Une application mobile 100% gratuite, 100% locale, qui fonctionne aussi hors connexion. Disponible sur Google Play et App Store.">
     <meta name="author" content="ENGIE Pacifique Informatique">
 
-    <title data-translate="title">Simply City, l'application mobile de Nouméa qui va vous simplifier la ville : évènements, restaurants, hôtels, commerces, plans </title>
+    <title data-translate="title">Simply City - l'application de Nouméa qui vous simplifie la ville !</title>
 
     <!-- Custom styles for this template -->
     <link href="css/simply-city.min.css" rel="stylesheet">
@@ -91,8 +91,8 @@
             <h2 class="section-heading" data-translate="downloadTitle">Venez découvrir l'application dont tout le monde parle!</h2>
             <p data-translate="downloadDescription">Notre application est disponible sur tous les smartphones! Téléchargez-la pour essayer!</p>
             <div class="badges">
-              <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.epi.SimplyCity"><img data-img="playStore" src="img/googleplay-fr.svg" alt=""></a>
-              <a class="badge-link" href="https://itunes.apple.com/fr/app/simply-city/id1245375216?mt=8"><img data-img="appleStore" src="img/App_Store_Badge_FR_135x40.svg" alt=""></a>
+              <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.epi.SimplyCity" onclick="ga('send', 'event', 'Store','click','Play Store');"><img data-img="playStore" src="img/googleplay-fr.svg" alt=""></a>
+              <a class="badge-link" href="https://itunes.apple.com/fr/app/simply-city/id1245375216?mt=8" onclick="ga('send', 'event', 'Store','click','App Store');"><img data-img="appleStore" src="img/App_Store_Badge_FR_135x40.svg" alt=""></a>
             </div>
           </div>
         </div>
@@ -297,6 +297,16 @@
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js" async defer></script>
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111474721-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111474721-4');
+    </script>
   </body>
 
 </html>
