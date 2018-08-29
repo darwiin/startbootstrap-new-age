@@ -1,312 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Avec Simply City Nouméa, retrouvez facilement les évènements, restaurants, hôtels, commerces, plans et plein d’autres infos utiles. Une application mobile 100% gratuite, 100% locale, qui fonctionne aussi hors connexion. Disponible sur Google Play et App Store.">
-    <meta name="author" content="ENGIE Pacifique Informatique">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Avec Simply City Nouméa, retrouvez facilement les évènements, restaurants, hôtels, commerces, plans et plein d’autres infos utiles. Une application mobile 100% gratuite, 100% locale, qui fonctionne aussi hors connexion. Disponible sur Google Play et App Store.">
+        <meta name="author" content="ENGIE Pacifique Informatique">
 
-    <title data-translate="title">Simply City - l'application de Nouméa qui vous simplifie la ville !</title>
+        <title data-translate="title">Simply City - l'application de Nouméa qui vous simplifie la ville !</title>
 
-    <!-- Custom styles for this template -->
-    <link href="css/simply-city.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="css/simply-city.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+        <!-- Custom fonts for this template -->
+        <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+        <!-- Plugin CSS -->
+        <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
 
+        <script>
+            /**
+            * Fonction de suivi des clics sur des liens sortants dans Analytics
+            * Cette fonction utilise une chaîne d'URL valide comme argument et se sert de cette chaîne d'URL
+            * comme libellé d'événement. Configurer la méthode de transport sur 'beacon' permet d'envoyer le clic
+            * au moyen de 'navigator.sendBeacon' dans les navigateurs compatibles.
+            */
+            var trackOutboundLink = function(url) {
+            ga('send', 'event', 'outbound', 'click', url, {
+                'transport': 'beacon',
+                'hitCallback': function(){document.location = url;}
+            });
+            }
+        </script> 
+    </head>
 
-  </head>
+    <body id="page-top">
 
-  <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Simply City</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#download" data-translate="download">Téléchargement</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#features" data-translate="features">Fonctionalités</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact" data-translate="contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link language-toggle" data-translate="language">fr</a>
-
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <header class="masthead">
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-lg-7 my-auto flex-column">
-            <div class="header-content mx-auto">
-              <h1 class="mb-5" data-translate="punchline">Avec Simply City simplifiez vous la ville !</h1>
-              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger" data-translate="trynow">Essayez maintenant gratuitement !</a>
-            </div>
-          </div>
-          <div class="col-lg-5 my-auto">
-            <div class="device-container">
-              <div class="device-mockup iphone6_plus portrait black">
-                <div class="device">
-                  <div class="screen">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="img/home.png" class="img-fluid" alt="Accueil, plans, évènements, promotions, hôtels">
-                  </div>
-                  <div class="button">
-                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="download bg-primary text-center" id="download">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 mx-auto">
-            <h2 class="section-heading" data-translate="downloadTitle">Venez découvrir l'application dont tout le monde parle!</h2>
-            <p data-translate="downloadDescription">Notre application est disponible sur tous les smartphones! Téléchargez-la pour essayer!</p>
-            <div class="badges">
-              <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.epi.SimplyCity" onclick="ga('send', 'event', 'Store','click','Play Store');"><img data-img="playStore" src="img/googleplay-fr.svg" alt=""></a>
-              <a class="badge-link" href="https://itunes.apple.com/fr/app/simply-city/id1245375216?mt=8" onclick="ga('send', 'event', 'Store','click','App Store');"><img data-img="appleStore" src="img/App_Store_Badge_FR_135x40.svg" alt=""></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="features" id="features">
-      <div class="container">
-        <div class="section-heading text-center">
-          <h2 data-translate="featuresHeading">Toute la ville dans votre poche</h2>
-          <p class="text-muted" data-translate="featuresSubHeading">Regardez tout ce que vous pouvez faire avec cette app!</p>
-          <hr>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 my-auto">
-            <div class="device-container">
-              <div class="device-mockup iphone6_plus portrait black">
-                <div class="device">
-                  <div class="screen">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="img/map.jpg" class="img-fluid" alt="plans, cartes, musée, sorties culturelles">
-                  </div>
-                  <div class="button">
-                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 my-auto">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-event text-primary"></i>
-                    <h3 data-translate="feature1Title">Tous les évènements</h3>
-                    <p class="text-muted" data-translate="feature1Description">Restez informés de ce qui sepasse autour de vous !</p>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-location-pin text-primary"></i>
-                    <h3 data-translate="feature2Title">Tous les lieux</h3>
-                    <p class="text-muted" data-translate="feature2Description">Où emmener les enfants ce week-end? Où boire un verre ce soir?</p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-bag text-primary"></i>
-                    <h3 data-translate="feature3Title">Tous les commerces</h3>
-                    <p data-translate="feature3Description" class="text-muted">Prêt à porter, bijouteries, centre commerciaux...</p>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-like text-primary"></i>
-                    <h3 data-translate="feature4Title">Tous les services</h3>
-                    <p data-translate="feature4Description" class="text-muted">Services publiques, écoles, bureaux de poste, stations services...</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="cta-content">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <h2 ><span ></span><br><br><br><span ></span></h2>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Simply City</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#download" data-translate="download">Téléchargement</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#features" data-translate="features">Fonctionalités</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#contact" data-translate="contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link language-toggle" data-translate="language">fr</a>
+
+                </li>
+            </ul>
+            </div>
         </div>
-      </div>
-      <div class="overlay"></div>
-    </section>
+        </nav>
 
-    <section id="contact">
-      <div class="container">
-          <div class="section-heading text-center">
-              <h2 data-translate="contactHeading">Contactez-nous</h2>
-              <hr>
-          </div>
-        <form id="contact-form" method="post" action="?" role="form">
-    
-          <div class="messages"></div>
-    
-          <div class="controls">
-    
+        <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+            <div class="col-lg-7 my-auto flex-column">
+                <div class="header-content mx-auto">
+                <h1 class="mb-5" data-translate="punchline">Avec Simply City simplifiez vous la ville !</h1>
+                <h4 data-translate="punchline-subtitle">Simply City, l'application mobile la plus complète de Nouméa !</h4>
+                <p data-translate="punchline-p">Retrouvez facilement : </p>
+                <ul>
+                    <li class="home" data-translate="punchline-li-1">Les restaurants, hôtels, bar, gîtes, commerces, etc.</li>
+                    <li class="home" data-translate="punchline-li-2">Les services publics</li>
+                    <li class="home" data-translate="punchline-li-3">Les événements, loisirs, promotions, etc.</li>
+                    <li class="home" data-translate="punchline-li-4">Les arrivée et départ des aéroports</li>
+                    <li class="home" data-translate="punchline-li-5">Les zones de Wifi gratuit</li>
+                    <li class="home" data-translate="punchline-li-6">Les stations-services, distributeurs de billets, etc.</li>
+                    <li class="home" data-translate="punchline-li-7">Et bien d'autres infos utiles</li>
+                </ul>
+                <br>
+                <h5 data-translate="punchline-hangs">Une application 100% gratuite, 100% locale qui fonctionne aussi hors connexion !</h5>
+                <br><br>
+                <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger" data-translate="trynow">Essayez maintenant gratuitement !</a>
+                </div>
+            </div>
+            <div class="col-lg-5 my-auto">
+                <div class="device-container">
+                <div class="device-mockup iphone6_plus portrait black">
+                    <div class="device">
+                    <div class="screen">
+                        <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                        <img src="img/home.png" class="img-fluid" alt="Accueil, plans, évènements, promotions, hôtels">
+                    </div>
+                    <div class="button">
+                        <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </header>
+
+        <section class="download bg-primary text-center" id="download">
+        <div class="container">
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="form_name" data-translate="formLabelFirstname">Firstname *</label>
-                  <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required"
-                    data-error="Firstname is required." data-placeholder="formPlaceholderFirstname">
-                  <div class="help-block with-errors"></div>
+            <div class="col-md-8 mx-auto">
+                <h2 class="section-heading" data-translate="downloadTitle">Venez découvrir l'application dont tout le monde parle!</h2>
+                <p data-translate="downloadDescription">Notre application est disponible sur tous les smartphones! Téléchargez-la pour essayer!</p>
+                <div class="badges">
+                    <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.epi.SimplyCity" onclick="trackOutboundLink('https://play.google.com')"><img data-img="playStore" src="img/googleplay-fr.svg" alt=""></a>
+                    <a class="badge-link" href="https://itunes.apple.com/fr/app/simply-city/id1245375216?mt=8" onclick="trackOutboundLink('https://itunes.apple.com')"><img data-img="appleStore" src="img/App_Store_Badge_FR_135x40.svg" alt=""></a>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="form_lastname" data-translate="formLabelLastname">Lastname *</label>
-                  <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required"
-                    data-error="Lastname is required." data-placeholder="formPlaceholderLastname">
-                  <div class="help-block with-errors"></div>
-                </div>
-              </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <section class="features" id="features">
+        <div class="container">
+            <div class="section-heading text-center">
+            <h2 data-translate="featuresHeading">Toute la ville dans votre poche</h2>
+            <p class="text-muted" data-translate="featuresSubHeading">Regardez tout ce que vous pouvez faire avec cette app!</p>
+            <hr>
             </div>
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="form_email" data-translate="formLabelEmail">Email *</label>
-                  <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required"
-                    data-error="Valid email is required." data-placeholder="formPlaceholderEmail">
-                  <div class="help-block with-errors"></div>
+            <div class="col-lg-4 my-auto">
+                <div class="device-container">
+                <div class="device-mockup iphone6_plus portrait black">
+                    <div class="device">
+                    <div class="screen">
+                        <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                        <img src="img/map.jpg" class="img-fluid" alt="plans, cartes, musée, sorties culturelles">
+                    </div>
+                    <div class="button">
+                        <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                    </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="form_phone" data-translate="formLabelPhone">Phone</label>
-                  <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone" data-placeholder="formPlaceholderPhone">
-                  <div class="help-block with-errors"></div>
                 </div>
-              </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="form_message" data-translate="formLabelMessage">Message *</label>
-                  <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required"
-                    data-error="Please,leave us a message." data-placeholder="formPlaceholderMessage"></textarea>
-                  <div class="help-block with-errors"></div>
+            <div class="col-lg-8 my-auto">
+                <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                    <div class="feature-item">
+                        <i class="icon-event text-primary"></i>
+                        <h3 data-translate="feature1Title">Tous les évènements</h3>
+                        <p class="text-muted" data-translate="feature1Description">Restez informés de ce qui sepasse autour de vous !</p>
+                    </div>
+                    </div>
+                    <div class="col-lg-6">
+                    <div class="feature-item">
+                        <i class="icon-location-pin text-primary"></i>
+                        <h3 data-translate="feature2Title">Tous les lieux</h3>
+                        <p class="text-muted" data-translate="feature2Description">Où emmener les enfants ce week-end? Où boire un verre ce soir?</p>
+                    </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-12">
-                  <button
-                  class="g-recaptcha btn btn-primary btn-send"
-                  data-sitekey="6Lc_njgUAAAAAGldV3rLB4CKzPDAbm3cZlgIE1zC"
-                  data-callback="send_email" data-translate="formLabelButton">
-                  Send message
-                  </button>
-              </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                    <div class="feature-item">
+                        <i class="icon-bag text-primary"></i>
+                        <h3 data-translate="feature3Title">Tous les commerces</h3>
+                        <p data-translate="feature3Description" class="text-muted">Prêt à porter, bijouteries, centre commerciaux...</p>
+                    </div>
+                    </div>
+                    <div class="col-lg-6">
+                    <div class="feature-item">
+                        <i class="icon-like text-primary"></i>
+                        <h3 data-translate="feature4Title">Tous les services</h3>
+                        <p data-translate="feature4Description" class="text-muted">Services publics, écoles, bureaux de poste, stations services...</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <p class="text-muted">
-                  <strong>*</strong> <span data-translate="formLabelMandatory">These fields are required. </span>
-                </p>
-              </div>
             </div>
-          </div>
-    
-        </form>
-      </div>
-    </section>
+        </div>
+        </section>
 
-    <section class="contact bg-primary">
-      <div class="container">
-        <h2><span data-translate="loveFriends1">Nous</span>
-          <i class="fa fa-heart"></i>
-          <span data-translate="loveFriends2">nous faire de nouveaux amis!</span></h2>
-        <ul class="list-inline list-social">
-          <li class="list-inline-item social-facebook">
-            <a href="https://www.facebook.com/simplycitync/">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-youtube">
-            <a href="https://www.youtube.com/channel/UCpZRlQIc859Z142QsXgqGKA/videos">
-              <i class="fa fa-youtube"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2 ><span ></span><br><br><br><span ></span></h2>
+            </div>
+        </div>
+        <div class="overlay"></div>
+        </section>
 
-    <footer>
-      <div class="container">
-        <p>&copy; 2017 ENGIE Pacifique Informatique. Tous droits réservés.</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="#">Privacy</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">Terms</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">FAQ</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+        <section id="contact">
+        <div class="container">
+            <div class="section-heading text-center">
+                <h2 data-translate="contactHeading">Contactez-nous</h2>
+                <hr>
+            </div>
+            <form id="contact-form" method="post" action="?" role="form">
+        
+            <div class="messages"></div>
+        
+            <div class="controls">
+        
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label for="form_name" data-translate="formLabelFirstname">Firstname *</label>
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required"
+                        data-error="Firstname is required." data-placeholder="formPlaceholderFirstname">
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label for="form_lastname" data-translate="formLabelLastname">Lastname *</label>
+                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required"
+                        data-error="Lastname is required." data-placeholder="formPlaceholderLastname">
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label for="form_email" data-translate="formLabelEmail">Email *</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required"
+                        data-error="Valid email is required." data-placeholder="formPlaceholderEmail">
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label for="form_phone" data-translate="formLabelPhone">Phone</label>
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone" data-placeholder="formPlaceholderPhone">
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                    <label for="form_message" data-translate="formLabelMessage">Message *</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required"
+                        data-error="Please,leave us a message." data-placeholder="formPlaceholderMessage"></textarea>
+                    <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button
+                    class="g-recaptcha btn btn-primary btn-send"
+                    data-sitekey="6Lc_njgUAAAAAGldV3rLB4CKzPDAbm3cZlgIE1zC"
+                    data-callback="send_email" data-translate="formLabelButton">
+                    Send message
+                    </button>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-md-12">
+                    <p class="text-muted">
+                    <strong>*</strong> <span data-translate="formLabelMandatory">These fields are required. </span>
+                    </p>
+                </div>
+                </div>
+            </div>
+        
+            </form>
+        </div>
+        </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <section class="contact bg-primary">
+        <div class="container">
+            <h2><span data-translate="loveFriends1">Nous</span>
+            <i class="fa fa-heart"></i>
+            <span data-translate="loveFriends2">nous faire de nouveaux amis!</span></h2>
+            <ul class="list-inline list-social">
+            <li class="list-inline-item social-facebook">
+                <a href="https://www.facebook.com/simplycitync/">
+                <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li class="list-inline-item social-youtube">
+                <a href="https://www.youtube.com/channel/UCpZRlQIc859Z142QsXgqGKA/videos">
+                <i class="fa fa-youtube"></i>
+                </a>
+            </li>
+            </ul>
+        </div>
+        </section>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <footer>
+        <div class="container">
+            <p>&copy; 2017 ENGIE Pacifique Informatique. Tous droits réservés.</p>
+            <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="#">Privacy</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">Terms</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">FAQ</a>
+            </li>
+            </ul>
+        </div>
+        </footer>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/new-age.min.js" async defer></script>
-    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/popper/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111474721-4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-      gtag('config', 'UA-111474721-4');
-    </script>
-  </body>
+        <!-- Custom scripts for this template -->
+        <script src="js/new-age.min.js" async defer></script>
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111474721-4"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111474721-4');
+        </script>
+    </body>
 
 </html>
