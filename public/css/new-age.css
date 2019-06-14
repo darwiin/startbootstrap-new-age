@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - New Age v4.0.0-beta (https://startbootstrap.com/template-overviews/new-age)
- * Copyright 2013-2018 Start Bootstrap
+ * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-new-age/blob/master/LICENSE)
  */
 html,
@@ -285,16 +285,18 @@ footer {
   text-align: center;
   color: rgba(255, 255, 255, 0.3);
   background-color: #222222; }
+  footer a {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3); }
+    footer a:hover, footer a:focus, footer a:active, footer a.active {
+      text-decoration: none; }
   footer p {
     font-size: 12px;
     margin: 0; }
   footer ul {
     margin-bottom: 0; }
-    footer ul li a {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.3); }
-      footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li a.active {
-        text-decoration: none; }
+  footer .mt-6 {
+    margin-top: 6px; }
 
 .bg-primary {
   background: #fdcc52;
