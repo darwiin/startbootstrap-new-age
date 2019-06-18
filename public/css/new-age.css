@@ -217,6 +217,39 @@ section.features .feature-item {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
 
+section.backoffice {
+  color: #fff !important; }
+  section.backoffice .section-heading {
+    margin-bottom: 100px; }
+    section.backoffice .section-heading h2 {
+      margin-top: 0; }
+    section.backoffice .section-heading p {
+      margin-bottom: 0; }
+  section.backoffice .device-container,
+  section.backoffice .feature-item {
+    max-width: 325px;
+    margin: 0 auto; }
+  section.backoffice .device-container {
+    max-width: 600px;
+    margin-bottom: 100px; }
+    @media (min-width: 992px) {
+      section.backoffice .device-container {
+        margin-bottom: 0; } }
+  section.backoffice .feature-item {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center; }
+    section.backoffice .feature-item h3 {
+      font-size: 30px; }
+    section.backoffice .feature-item i {
+      font-size: 80px;
+      display: block;
+      margin-bottom: 15px;
+      background: -webkit-linear-gradient(to left, #FFE29D, #0078BE);
+      background: linear-gradient(to left, #FFE29D, #0078BE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }
+
 section.cta {
   position: relative;
   padding: 250px 0;
@@ -302,6 +335,11 @@ footer {
   background: #fdcc52;
   background: -webkit-linear-gradient(#fdcc52, #fdc539);
   background: linear-gradient(#fdcc52, #fdc539); }
+
+.bg-tertiary {
+  background: #0078BE;
+  background: -webkit-linear-gradient(#0078BE, #0068a5);
+  background: linear-gradient(#0078BE, #0068a5); }
 
 .text-primary {
   color: #fdcc52; }
